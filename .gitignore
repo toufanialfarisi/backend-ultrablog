@@ -1,5 +1,4 @@
 env/ 
 .vscode/
 manage.pyc
-migrations/
 __pycache__
