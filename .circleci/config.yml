@@ -3,3 +3,5 @@ jobs:
   build:
     docker:
       - image: cicrcleci/python:3.6.2-stretct-browsers
+    steps:
+      - run: sudo apt-install python3-dev
