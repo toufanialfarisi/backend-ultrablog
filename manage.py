@@ -21,7 +21,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.config[
     "SQLALCHEMY_DATABASE_URI"
-] = "postgresql://toufani:postgres@localhost/ultrablog"
+] = "postgres://dwahtxakujsjqo:6caf66755eee6c3732bcf76af174e30d3a06c0d119e9b617669736696d0cb120@ec2-54-204-39-43.compute-1.amazonaws.com:5432/df1cmvd52cphuf"
 
 """
 MYSQL AND SQLITE CONFIGURATION
