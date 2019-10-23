@@ -100,7 +100,7 @@ class Diary(Resource):
         # return ""
         model.judul = data.get("judul")
         model.konten = data.get("konten")
-        model.featureImage = data.get("featureURL")
+        model.featureImage = data.get("featureImage")
         if model.save():
             return {"message": "sukses menyimpan data"}, 200
         else:
