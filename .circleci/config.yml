@@ -10,16 +10,4 @@ jobs:
       - cehckout
       - run: sudo apt-install postgresql-client-9.6
       - run: whoami
-      - run: |
-        psql \
-        -d $TEST_DATABASE_URL \
-        -c "CREATE TABLE test (name char(25));"
-    - run: |
-        psql \
-        -d $TEST_DATABASE_URL \
-        -c "CREATE TABLE test (name char(25));"
-
-        
-
-
-
+      - run: psql -d $TEST_DATABASE_URL -c "CREATE TABLE test (name char(25));"
