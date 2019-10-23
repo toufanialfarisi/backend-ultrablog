@@ -12,22 +12,5 @@ jobs: # A basic unit of work in a run
       # CircleCI PostgreSQL images available at: https://hub.docker.com/r/circleci/postgres/
       - image: circleci/postgres:9.6.2
         environment: # environment variables for the Postgres container.
-          POSTGRES_USER: postgres
-          POSTGRES_DB: ultrablog
-    steps: # steps that comprise the `build` job
-      - checkout # check out source code to working directory
-      - run: sudo chown -R circleci:circleci /usr/local/bin
-      - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-      - run:
-          command: |
-            sudo pip install -r requirements.txt
-      - save_cache: # cache Python dependencies using checksum of Pipfile as the cache-key
-          paths:
-            - ".venv"
-            - "/usr/local/bin"
-            - "/usr/local/lib/python3.6/site-packages"
-      - run:
-          command: |
-            python test.py
-      - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
-          path: test-results
+          POSTGRES_USER: root
+          POSTGRES_DB: circle_test
