@@ -96,8 +96,9 @@ class Diary(Resource):
     def post(self):
         model = DataModels()
         data = request.json
-        # print("INI ADALAH DATANYA : \n", data)
+        print("INI ADALAH DATANYA : \n", data)
         # return ""
+
         model.judul = data.get("judul")
         model.konten = data.get("konten")
         model.featureImage = data.get("featureImage")
