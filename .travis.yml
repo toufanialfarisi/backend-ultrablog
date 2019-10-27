@@ -1,4 +1,8 @@
 language: python
 python:
   - "3.6"
-script: python test.py
+
+# command to run tests
+script:
+  - "python manage.py runserver"
+  - "pytest test.py"
