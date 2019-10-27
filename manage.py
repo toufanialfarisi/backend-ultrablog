@@ -23,7 +23,12 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.config[
     "SQLALCHEMY_DATABASE_URI"
-] = "postgres://dwahtxakujsjqo:6caf66755eee6c3732bcf76af174e30d3a06c0d119e9b617669736696d0cb120@ec2-54-204-39-43.compute-1.amazonaws.com:5432/df1cmvd52cphuf"
+] = "postgres://postgres:postgres@localhost:5432/ultrablog"
+
+
+# app.config[
+#     "SQLALCHEMY_DATABASE_URI"
+# ] = "postgres://dwahtxakujsjqo:6caf66755eee6c3732bcf76af174e30d3a06c0d119e9b617669736696d0cb120@ec2-54-204-39-43.compute-1.amazonaws.com:5432/df1cmvd52cphuf"
 
 """
 MYSQL AND SQLITE CONFIGURATION
@@ -102,9 +107,11 @@ class Diary(Resource):
         model.judul = data.get("judul")
         model.konten = data.get("konten")
         model.featureImage = data.get("featureImage")
-        if model.save():
+        try:
+            model.save()
             return {"message": "sukses menyimpan data"}, 200
-        else:
+        except:
+            raise
             return {"message": "gagal menyimpan, coba lagi"}, 400
 
     def delete(self):
