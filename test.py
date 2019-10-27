@@ -6,7 +6,7 @@ import requests
 
 class TestApp(unittest.TestCase):
 
-    base_endp = "http://localhost"
+    base_endp = "https://ultrablog-backend.herokuapp.com/"
 
     def test_rest_all_data(self):
         data_resp = {"message": "Semua data sukses dihapus"}
